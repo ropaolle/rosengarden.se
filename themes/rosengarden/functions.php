@@ -17,4 +17,26 @@ function pique_enqueue_child_styles() {
     );
 }
 
+define("MYFORMAT", 'l - d F');
+    
+function displayWeekday($atts = [], $content = null, $tag = ''){
+    // normalize attribute keys, lowercase
+    $atts = array_change_key_case((array)$atts, CASE_LOWER);
+ 
+    // override default attributes with user attributes
+    $wporg_atts = shortcode_atts(['day' => 'day-of-the-week'], $atts, $tag);
+
+    return date_i18n(MYFORMAT, strtotime($wporg_atts['day'] . ' this week'));
+    }
+    add_shortcode('weekday', 'displayWeekday');
+    
+        
+function displayweek(){
+    return date('W');    
+    }
+    add_shortcode('week', 'displayweek');
+    
+    
+
+
 ?>
