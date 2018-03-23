@@ -8,7 +8,9 @@ Ska vi spara menyerna
 Vad ska visa
 Priser
 
-
+## Info
+http://components.underscores.me/wp/
+http://underscores.me/
 
 
 ## Commands

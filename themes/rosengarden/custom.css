@@ -1,6 +1,4 @@
-.pique-panel {
-    min-height: 30vh;
-}
+/* Header */
 
 .pique-panel-background {
     opacity: 1;
@@ -10,9 +8,61 @@
     font-size: 2.5em;
 }
 
+.site-branding .site-logo-link {
+    display: none;
+    margin: 1rem auto 0;
+}
+
+@media (max-width: 767px) {
+    .site-branding .site-title {
+        font-size: 1.6em;
+        display: block;
+    }
+	.site-branding .site-logo-link {
+		display: none;
+    }
+    .site-branding .site-description {
+        font-size: 12px;
+    }
+}
+
+/* Footer */
+
 footer.site-footer {
     background-image: none !important;
     background-color: teal;
+}
+
+
+/* Front page */
+
+.pique-panel {
+    min-height: 30vh;
+}
+
+.pique-panel .entry-footer {
+    padding: 0;
+}
+
+/* Meny */
+
+.pique-panel.post-34 .entry-header {
+    display: none;
+}
+
+.pique-panel.post-34 h2 {
+    margin-top: 0;
+}
+
+.pique-panel.post-34 h3 {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.pique-panel.post-34  .entry-content {
+    text-align: center;
 }
 
 /* Öppettider */
