@@ -5,10 +5,13 @@ Author: Olle Sjögren
 Author URI: https://ropaolle.se
 Template: understrap
 Text Domain: rosengarden
-Version: 0.0.3
+Version: 0.0.4
 */
 
+.site-footer {
+    text-align: center;
+}
 
-iframe {
-    max-width: 100%;
+#wrapper-footer-full-second {
+    display: none;
 }

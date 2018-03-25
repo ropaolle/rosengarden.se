@@ -23,6 +23,8 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+    // Add custom styles. TODO: Build and minify theme with Gulp.
+    wp_enqueue_style( 'child-rosengarden-styles', get_stylesheet_directory_uri() . '/style.css', array(), $the_theme->get( 'Version' ) );
 }
 
 define("MYFORMAT", 'l - d F');
