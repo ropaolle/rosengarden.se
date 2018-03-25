@@ -13,6 +13,7 @@
 * [Shortcodes](https://github.com/billerickson/display-posts-shortcode/blob/master/README.md#parameters)
   [display-posts include_title="false" posts_per_page="20" include_content="true" wrapper="div" include_date="true" date_format="l \\d\\e\\n d F"]
 * [Wordpress conditional tags](https://codex.wordpress.org/Conditional_Tags)
+* [Jetpack Email](https://jetpack.com/support/contact-form/)
 
 ## Commands
 

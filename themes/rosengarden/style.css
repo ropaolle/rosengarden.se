@@ -41,6 +41,7 @@ a:hover {
     font-size: 3rem;
 }
 
+
 #navbarNavDropdown {
     justify-content: center;
 }
@@ -77,8 +78,24 @@ a:hover {
     margin-top: 1.5rem;
 }
 
+#wrapper-front-first .bonus {
+    color: #d44336;
+}
+
+
 #wrapper-front-first .display-posts-listing p {
     margin-bottom: 5px;
+}
+
+.post-6 .entry-week {
+    border: 1px solid #94af76;
+    padding: 10px 10px 0;
+    margin-bottom: 24px;
+    background-color: #c5e1a5;
+}
+
+.post-6 .entry-week .bonus {
+    color: #b91400;
 }
 
 #wrapper-front-second {
@@ -124,3 +141,25 @@ a:hover {
     text-align: center;
 }
 
+/* Mobile */
+
+@media (max-width: 767px) {
+    #wrapper-header-full-first .navbar-brand {
+        font-size: 2.5em;
+        white-space: pre-wrap;
+        line-height: 1.2em;
+    }
+
+    .wrapper-front h1 {
+        font-size: 1.5em;
+    }  
+
+    h3.widget-title {
+        text-align: center;
+    }
+
+    #custom_html-4 h3.widget-title {
+        margin-top: 30px;
+    }
+
+}
