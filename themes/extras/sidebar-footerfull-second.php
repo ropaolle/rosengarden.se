@@ -11,7 +11,7 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 <?php if ( is_active_sidebar( 'footerfull' ) ) : ?>
 
-	<!-- ******************* The Footer Full-width Widget Area ******************* -->
+	<!-- ******************* The Footer Full Second-width Widget Area ******************* -->
 
 	<div class="wrapper" id="wrapper-footer-full-second">
 
@@ -25,6 +25,6 @@ $container   = get_theme_mod( 'understrap_container_type' );
 
 		</div>
 
-	</div><!-- #wrapper-footer-full -->
+	</div><!-- #wrapper-footer-full-second -->
 
 <?php endif; ?>

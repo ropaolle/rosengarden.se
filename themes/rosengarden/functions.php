@@ -44,24 +44,8 @@ function displayweek(){
     return date('W');    
     }
     add_shortcode('week', 'displayweek');
-    
-    
 
-/**
- * Initializes themes widgets.
- */
-function rosengarden_widgets_init() {
-    
-    register_sidebar( array(
-        'name'          => __( 'Footer Full Second', 'rosengarden' ),
-        'id'            => 'footerfull-second',
-        'description'   => 'Widget area below main content and above footer',
-        'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. 'olle' .'">', 
-        'after_widget'   => '</div><!-- .footer-widget -->', 
-        'before_title'   => '<h3 class="widget-title">', 
-        'after_title'    => '</h3>', 
-    ) );
-
-}
-
-add_action( 'widgets_init', 'rosengarden_widgets_init' );
+function register_frontpage_menu() {
+    register_nav_menu('frontpage-menu',__( 'Frontpage Menu' ));
+    }
+    add_action( 'init', 'register_frontpage_menu' );

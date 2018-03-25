@@ -27,55 +27,81 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="hfeed site" id="page">
 
+	<!-- ******************* The Header Area ******************* -->
+<div class="wrapper" id="wrapper-header-full-first">
+
+	<div class="<?php echo esc_attr( $container ); ?>" id="header-full-first-content" tabindex="-1">
+
+		<!-- Your site title as branding in the menu -->
+		<?php if ( is_front_page() && is_home() ) : ?>
+
+			<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
+
+		<?php else : ?>
+
+			<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
+
+		<?php endif; ?>
+
+		<?php if ( has_custom_logo() ) {
+			the_custom_logo();
+		} ?><!-- end custom logo -->
+
+	</div>
+
+</div><!-- #wrapper-header-full-first -->
+
 	<!-- ******************* The Navbar Area ******************* -->
 <div class="wrapper-fluid wrapper-navbar" id="wrapper-navbar" itemscope itemtype="http://schema.org/WebSite">
 
-		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
+		<a class="skip-link screen-reader-text sr-only" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>		
 
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-		<?php if ( 'container' == $container ) : ?>
-			<div class="container" >
-		<?php endif; ?>
-
-					<!-- Your site title as branding in the menu -->
-					<?php if ( ! has_custom_logo() ) { ?>
-
-						<?php if ( is_front_page() && is_home() ) : ?>
-
-							<h1 class="navbar-brand mb-0"><a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-							
-						<?php else : ?>
-
-							<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
-						
-						<?php endif; ?>
-						
-					
-					<?php } else {
-						the_custom_logo();
-					} ?><!-- end custom logo -->
-
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<!-- The WordPress Menu goes here -->
-				<?php wp_nav_menu(
-					array(
-						'theme_location'  => 'primary',
-						'container_class' => 'collapse navbar-collapse',
-						'container_id'    => 'navbarNavDropdown',
-						'menu_class'      => 'navbar-nav',
-						'fallback_cb'     => '',
-						'menu_id'         => 'main-menu',
-						'walker'          => new understrap_WP_Bootstrap_Navwalker(),
-					)
-				); ?>
 			<?php if ( 'container' == $container ) : ?>
-			</div><!-- .container -->
+				<div class="container" >
 			<?php endif; ?>
 
-		</nav><!-- .site-navigation -->
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<!-- The WordPress Menu goes here -->
+					<?php wp_nav_menu(
+						array(
+							'theme_location'  => 'primary',
+							'container_class' => 'collapse navbar-collapse',
+							'container_id'    => 'navbarNavDropdown',
+							'menu_class'      => 'navbar-nav',
+							'fallback_cb'     => '',
+							'menu_id'         => 'main-menu',
+							'walker'          => new understrap_WP_Bootstrap_Navwalker(),
+						)
+					); ?>
+
+				<?php if ( 'container' == $container ) : ?>
+				</div><!-- .container -->
+				<?php endif; ?>
+
+			</nav><!-- .site-navigation -->		
 
 	</div><!-- .wrapper-navbar end -->
+
+<!-- ******************* Header flash ******************* -->
+<?php if ( is_front_page() ) : ?>
+
+	<div class="wrapper" id="wrapper-header-flash">
+
+		<div class="<?php echo esc_attr( $container ); ?>" id="header-flash" tabindex="-1">
+
+			<?php edit_post_link('edit', '', '', 8); ?>
+
+			<?php echo apply_filters('the_content', get_page(8)->post_content); ?>		
+
+		</div>
+
+	</div><!-- #wrapper-header-flash -->
+
+<?php endif; ?>
+
+<?php get_sidebar( 'headerfull-second' ); ?>

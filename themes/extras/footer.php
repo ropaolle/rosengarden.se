@@ -13,6 +13,8 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <?php get_sidebar( 'footerfull' ); ?>
 
+<?php get_sidebar( 'footerfull-second' ); ?>
+
 <div class="wrapper" id="wrapper-footer">
 
 	<div class="<?php echo esc_attr( $container ); ?>">

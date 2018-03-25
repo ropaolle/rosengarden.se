@@ -8,10 +8,119 @@ Text Domain: rosengarden
 Version: 0.0.4
 */
 
+a {
+    color: #1e88e5;
+}
+
+a:hover {
+    color: #6ab7ff;
+}
+
+
+#wrapper-header-full-first {
+    /* background-color: gray; */
+    /* background-image: url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg); */
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* border-bottom: 1px solid #EDEDED; */
+    text-align: center;
+    min-height: 30vh;
+    background:
+    /* top, transparent black, faked with gradient */ 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7), 
+      rgba(0, 0, 0, 0.7)
+    ),
+    /* bottom, image */
+    url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg);
+}
+
+#wrapper-header-full-first .navbar-brand {
+    color: #f7f7f7;
+    font-size: 3rem;
+}
+
+#navbarNavDropdown {
+    justify-content: center;
+}
+
+.custom-logo-link {
+    max-width: 25%;
+}
+
+#wrapper-header-flash {
+    text-align: center;
+    background-color: #77c043;
+    padding: 1rem 0 1px 0;
+}
+
+#wrapper-header-flash .post-edit-link {
+    float: left;
+}
+
+#wrapper-header-full-second {
+    background-color: #ccc;
+    padding: 1rem 0 0 0;
+}
+
+/* Front page */
+
+#wrapper-front-first {
+    background-color: #373737;    
+    color: #f7f7f7;
+}
+
+#wrapper-front-first h3 {
+    font-size: 1.5rem;
+    color: #78909c;
+    margin-top: 1.5rem;
+}
+
+#wrapper-front-first .display-posts-listing p {
+    margin-bottom: 5px;
+}
+
+#wrapper-front-second {
+    background-color: darkslategray;
+    color: #f7f7f7;
+}
+
+.wrapper-front .col-md-12 {
+    text-align: center;
+}
+
+.wrapper-front h1 {
+    display: inline-block;
+    border: 3px solid #ccc;
+    margin: 1rem 0px 2rem 0;
+    padding: 10px 15px;
+}    
+
+.wrapper-front h1::after {
+    background: none repeat scroll 0 0 #373737;
+    bottom: -13px;
+    content: "";
+    display: block;
+    height: 3px;
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#wrapper-front-second h1::after {
+    background: none repeat scroll 0 0 darkslategray;
+}
+
+/* Footer */
+
+#wrapper-footer {
+    background-color: #343a40;
+    color: #f7f7f7;
+}
+
 .site-footer {
     text-align: center;
 }
 
-#wrapper-footer-full-second {
-    display: none;
-}
