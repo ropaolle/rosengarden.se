@@ -27,8 +27,7 @@ a:hover {
     background-size: cover;
     background-repeat: no-repeat;
     text-align: center;
-    min-height: 30vh;
-   
+    /* min-height: 30vh; */
 }
 
 /* #wrapper-header-full-first {
@@ -83,28 +82,42 @@ a:hover {
     margin-top: 1.5rem;
 }
 
+#wrapper-front-first .entry-week {
+    background-color: #303030;
+    padding: 10px;
+    border: 1px solid #262626;
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
 #wrapper-front-first .bonus {
     color: #d44336;
 }
 
-
 #wrapper-front-first .display-posts-listing p {
     margin-bottom: 5px;
-}
-
-.post-6 .entry-week {
-    border: 1px solid #94af76;
-    padding: 10px 10px 0;
-    margin-bottom: 24px;
-    background-color: #c5e1a5;
 }
 
 .post-6 .entry-week .bonus {
     color: #b91400;
 }
 
-.entry-week .bonus i {
-        padding-right: 0.5em;
+.post-6 .entry-week {
+    margin-bottom: 24px;
+}
+
+.post-6 h3  {
+    margin-top: 1.4rem;
+}
+
+.post-6 .display-posts-listing p {
+    margin-bottom: 0.5em;
+    display: list-item;
+    margin-left: 1em
+}
+
+.bonus i {
+    padding-right: 0.5em;
 }
 
 #wrapper-front-second {
@@ -175,4 +188,44 @@ a:hover {
         max-width: 30%;
     }
 
+}
+
+/* Print */
+@media print { 
+    #wrapper-header-full-first {
+        /* min-height: 10vh; */
+        background: linear-gradient(
+            rgba(0, 0, 0, 0.5), 
+            rgba(0, 0, 0, 0.5)
+        ),
+        url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg);       
+    }  
+       
+    #wrapper-front-second, #wrapper-footer-full, #wrapper-footer, .post-edit-link {
+        display: none;
+    }
+
+    .custom-logo-link {
+        max-width: 10%;
+    }
+
+    body, #page {
+        height: 100vh;
+        background-color: #373737;
+    }
+
+    .print {
+        display: block;
+        position: absolute;
+        bottom: 0;
+    }
+
+    #wrapper-front-first:after {  
+        position: absolute;
+        bottom: 5px;
+        width: 100%;
+        /* margin: 0 auto; */
+        text-align: center; 
+        content: "Adress: Rosengårdsvägen 39, Tel: 0766 77 87 45, Epost: info@rosengardenmat.se, Hemsida: rosengardenmat.se";
+    }
 }
