@@ -32,6 +32,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="header-full-first-content" tabindex="-1">
 
+		<?php if ( has_custom_logo() ) {
+			the_custom_logo();
+		} ?><!-- end custom logo -->
+
 		<!-- Your site title as branding in the menu -->
 		<?php if ( is_front_page() && is_home() ) : ?>
 
@@ -42,10 +46,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 			<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url"><?php bloginfo( 'name' ); ?></a>
 
 		<?php endif; ?>
-
-		<?php if ( has_custom_logo() ) {
-			the_custom_logo();
-		} ?><!-- end custom logo -->
 
 	</div>
 

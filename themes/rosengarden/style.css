@@ -5,7 +5,7 @@ Author: Olle Sjögren
 Author URI: https://ropaolle.se
 Template: understrap
 Text Domain: rosengarden
-Version: 0.0.4
+Version: 0.0.5
 */
 
 a {
@@ -18,27 +18,32 @@ a:hover {
 
 
 #wrapper-header-full-first {
-    /* background-color: gray; */
-    /* background-image: url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg); */
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7), 
+        rgba(0, 0, 0, 0.7)
+    ),
+    url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg);
     background-position: 50% 50%;
     background-size: cover;
     background-repeat: no-repeat;
-    /* border-bottom: 1px solid #EDEDED; */
     text-align: center;
     min-height: 30vh;
-    background:
-    /* top, transparent black, faked with gradient */ 
-    linear-gradient(
-      rgba(0, 0, 0, 0.7), 
-      rgba(0, 0, 0, 0.7)
-    ),
-    /* bottom, image */
-    url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg);
+   
 }
+
+/* #wrapper-header-full-first {
+    background-image: url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    min-height: 30vh;  
+} */
 
 #wrapper-header-full-first .navbar-brand {
     color: #f7f7f7;
     font-size: 3rem;
+    margin-right: 0;
 }
 
 
@@ -47,7 +52,7 @@ a:hover {
 }
 
 .custom-logo-link {
-    max-width: 25%;
+    max-width: 15%;
 }
 
 #wrapper-header-flash {
@@ -96,6 +101,10 @@ a:hover {
 
 .post-6 .entry-week .bonus {
     color: #b91400;
+}
+
+.entry-week .bonus i {
+        padding-right: 0.5em;
 }
 
 #wrapper-front-second {
@@ -160,6 +169,10 @@ a:hover {
 
     #custom_html-4 h3.widget-title {
         margin-top: 30px;
+    }
+
+    .custom-logo-link {
+        max-width: 30%;
     }
 
 }
