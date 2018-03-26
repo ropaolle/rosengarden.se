@@ -49,3 +49,10 @@ function register_frontpage_menu() {
     register_nav_menu('frontpage-menu',__( 'Frontpage Menu' ));
     }
     add_action( 'init', 'register_frontpage_menu' );
+
+// Customize login page - https://premium.wpmudev.org/blog/customize-login-page/
+function my_custom_login() {
+	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/style-custom-login.css" />';
+}
+add_action('login_head', 'my_custom_login');
+    

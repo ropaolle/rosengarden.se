@@ -1,11 +1,15 @@
 # Todo
 
-* [x] Vidarebefordra från http/s rosengårdenmat.se
-* [ ] Fixa badge/logga
-* [ ] Döpa veckodagar, t.ex. Påskafton m.m.
-* [ ] Utskrift av menyn
+* [ ] Ska vi ha en badge/logga?
+* [ ] Döpa veckodagar på menyn, t.ex. påskafton m.m. Behövs det?
+* [ ] Format för utskrifter av lunchmenyn.
 * [ ] Hjälpsida
-* [ ] Rebuild CSS with Gulp?
+* [ ] Vilka epostadresser ska användas?
+
+## Nästa version
+
+* [ ] Lägga in bokningar av lokal.
+* [ ] Rebuild CSS with Gulp.
 
 ## Info
 
