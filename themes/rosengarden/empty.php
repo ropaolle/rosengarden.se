@@ -13,9 +13,9 @@ get_header();
 ?>
 
 <!-- ******************* Front first ******************* -->
-<div class="wrapper wrapper-front" id="wrapper-front-first">
+<div class="wrapper wrapper-front" id="front-first">
 
-    <div class="container" id="front-first" tabindex="-1">
+    <div class="container" tabindex="-1">
 
         <div class="row">
 
@@ -31,10 +31,8 @@ get_header();
 
                 </header><!-- .entry-header -->
 
-                <?php echo apply_filters('the_content', get_page(6)->post_content); ?>		
-
-                <?php edit_post_link('edit', '', '', 6); ?>
-
+                <?php echo apply_filters('the_content', get_page(6)->post_content); ?>	
+                     
             </div><!--col end -->
 
         </div><!-- row end -->
@@ -44,9 +42,9 @@ get_header();
 </div>
 
 <!-- ******************* Front second ******************* -->
-<div class="wrapper wrapper-front" id="wrapper-front-second">
+<div class="wrapper wrapper-front" id="front-second">
 
-    <div class="container" id="front-second" tabindex="-1">
+    <div class="container" tabindex="-1">
 
         <div class="row">
 

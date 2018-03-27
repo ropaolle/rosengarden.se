@@ -8,6 +8,7 @@
 
 ## Nästa version
 
+* [ ] Footer meny, hjälp, bokningar m.m.
 * [ ] Lägga in bokningar av lokal.
 * [ ] Rebuild CSS with Gulp.
 

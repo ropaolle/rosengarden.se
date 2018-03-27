@@ -16,6 +16,7 @@ a:hover {
     color: #6ab7ff;
 }
 
+/* Header */
 
 #wrapper-header-full-first {
     background: linear-gradient(
@@ -42,9 +43,8 @@ a:hover {
 #wrapper-header-full-first .navbar-brand {
     color: #f7f7f7;
     font-size: 3rem;
-    margin-right: 0;
+    margin: 0 10px;
 }
-
 
 #navbarNavDropdown {
     justify-content: center;
@@ -71,61 +71,6 @@ a:hover {
 
 /* Front page */
 
-#wrapper-front-first {
-    background-color: #373737;    
-    color: #f7f7f7;
-}
-
-#wrapper-front-first h3 {
-    font-size: 1.3rem;
-    color: #78909c;
-    margin-top: 1.5rem;
-    text-transform: capitalize;
-}
-
-#wrapper-front-first .entry-week {
-    background-color: #303030;
-    padding: 10px;
-    border: 1px solid #262626;
-    border-radius: 3px;
-    margin-bottom: 1em;
-}
-
-#wrapper-front-first .bonus {
-    color: #d44336;
-}
-
-#wrapper-front-first .display-posts-listing p {
-    margin-bottom: 5px;
-}
-
-.post-6 .entry-week .bonus {
-    color: #b91400;
-}
-
-.post-6 .entry-week {
-    margin-bottom: 24px;
-}
-
-.post-6 h3  {
-    margin-top: 1.4rem;
-}
-
-.post-6 .display-posts-listing p {
-    margin-bottom: 0.5em;
-    display: list-item;
-    margin-left: 1em
-}
-
-.bonus i {
-    padding-right: 0.5em;
-}
-
-#wrapper-front-second {
-    background-color: darkslategray;
-    color: #f7f7f7;
-}
-
 .wrapper-front .col-md-12 {
     text-align: center;
 }
@@ -134,22 +79,61 @@ a:hover {
     display: inline-block;
     border: 3px solid #ccc;
     margin: 1rem 0px 2rem 0;
-    padding: 10px 15px;
+    padding: 10px 15px 7px 15px;
 }    
 
-.wrapper-front h1::after {
+.wrapper-front h1:after {
     background: none repeat scroll 0 0 #373737;
-    bottom: -13px;
+    bottom: -11px;
     content: "";
     display: block;
-    height: 3px;
+    height: 5px;
     position: relative;
     width: 80%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#wrapper-front-second h1::after {
+/* Frontpage lunchmeny */
+
+#front-first {
+    background-color: #373737;    
+    color: #f7f7f7;
+}
+
+#front-first .entry-week {
+    background-color: #303030;
+    padding: 10px;
+    border: 1px solid #262626;
+    border-radius: 3px;
+    margin-bottom: 1em;
+}
+
+/* Lunchmeny */
+
+.post-6 {
+    text-align: center;
+}
+
+.lunchmeny .display-posts-listing p {
+    margin-bottom: 8px;
+}
+
+.lunchmeny h3 {
+    font-size: 1.3rem;
+    color: #78909c;
+    margin-top: 1.5rem;
+    text-transform: capitalize;
+}
+
+/* Front Catering */
+
+#front-second {
+    background-color: darkslategray;
+    color: #f7f7f7;
+}
+
+#front-second h1::after {
     background: none repeat scroll 0 0 darkslategray;
 }
 
@@ -202,7 +186,12 @@ a:hover {
         url(https://rosengardenmat.se/wp-content/uploads/sites/5/2018/03/meatballs.jpg);       
     }  
        
-    #wrapper-front-second, #wrapper-footer-full, #wrapper-footer, .post-edit-link {
+    #front-second, 
+    #wrapper-footer-full, 
+    #wrapper-footer, 
+    .post-edit-link,
+    .sharedaddy,
+    .addtoany_shortcode {
         display: none;
     }
 
@@ -210,7 +199,7 @@ a:hover {
         max-width: 10%;
     }
 
-    body, #page {
+    body.home {
         height: 100vh;
         background-color: #373737;
     }
@@ -221,12 +210,17 @@ a:hover {
         bottom: 0;
     }
 
-    #wrapper-front-first:after {  
+    #front-first:after,
+    #page-wrapper:after {  
         position: absolute;
         bottom: 5px;
         width: 100%;
-        /* margin: 0 auto; */
         text-align: center; 
         content: "Adress: Rosengårdsvägen 39, Tel: 0766 77 87 45, Epost: info@rosengardenmat.se, Hemsida: rosengardenmat.se";
+    }
+
+    .page-id-6 .lunchmeny {
+        color: #222 !important;
+        font-size: 140%;
     }
 }
