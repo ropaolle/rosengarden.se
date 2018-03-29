@@ -1,6 +1,9 @@
 # Todo
 
-* Vilka epostadresser ska användas?
+* Sortering av rätter, efterrätt sist, sortera med datum
+* Lista med Cateringtyper -> sidor, visa och dölj listitems automatiskt - Kontaktformulär. Var ska det ligga på listsida eller slutsida.
+* Epost via hemsidan, ronny, camilla, andreas info-> alla...
+* Nytt typsnitt i loggan, vilket?
 
 ## Nästa version
 
@@ -35,3 +38,6 @@ cd /opt/bitnami/letsencrypt
 # Restricted to 5 times per week
 sudo ./certbot-auto certonly --standalone -d ropaolle.se -d www.ropaolle.se -d wp.ropaolle.se -d rosengardenmat.se
 ```
+
+### Fakturering
+
