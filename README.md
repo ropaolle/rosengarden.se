@@ -5,6 +5,7 @@
 * Epost via hemsidan, ronny, camilla, andreas info-> alla...
 * Nytt typsnitt i loggan, vilket?
 
+
 ## Nästa version
 
 * Döpa veckodagar på menyn, t.ex. påskafton m.m. Behövs det?
