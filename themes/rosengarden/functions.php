@@ -41,11 +41,21 @@ function displayWeekday($atts = [], $content = null, $tag = ''){
     }
     add_shortcode('weekday', 'displayWeekday');
     
-function displayweek(){
+function displayWeek(){
     return date('W');    
     }
-    add_shortcode('week', 'displayweek');
+    add_shortcode('week', 'displayWeek');
 
+function displayContactInfo(){
+    return apply_filters('the_content', get_page(187)->post_content);
+    }
+    add_shortcode('contact-info', 'displayContactInfo');  
+
+function displayOpeningInfo(){
+    return '<div class="opening-info">' . apply_filters('the_content', get_page(189)->post_content) . '</div>';
+    }
+    add_shortcode('opening-info', 'displayOpeningInfo');  
+        
 /* Menus */
 function register_footer_menu() {
     register_nav_menu('footer-menu',__( 'Footer Menu' ));
@@ -64,3 +74,10 @@ function auto_redirect_external_after_logout(){
   wp_redirect( 'https://rosengardenmat.se' );
   exit();
 }
+
+// Login redirect
+function admin_default_page() {
+    return '/help';
+  }
+  
+  add_filter('login_redirect', 'admin_default_page');

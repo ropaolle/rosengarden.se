@@ -32,6 +32,8 @@ get_header();
                 </header><!-- .entry-header -->
 
                 <?php echo apply_filters('the_content', get_page(6)->post_content); ?>	
+
+                <?php edit_post_link('edit', '', '', 6); ?>
                      
             </div><!--col end -->
 

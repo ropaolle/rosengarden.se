@@ -1,14 +1,10 @@
 # Todo
 
-* Ska vi ha en badge/logga?
-* Ska vi visa social iconer
-* Format för utskrifter av lunchmenyn (färg + svartvitt).
 * Vilka epostadresser ska användas?
 
 ## Nästa version
 
 * Döpa veckodagar på menyn, t.ex. påskafton m.m. Behövs det?
-* Footer meny, hjälp, bokningar m.m.
 * Lägga in bokningar av lokal.
 * Rebuild CSS with Gulp.
 

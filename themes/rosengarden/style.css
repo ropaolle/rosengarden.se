@@ -67,6 +67,11 @@ a:hover {
     text-align: center;
 }
 
+#front-first .entry-header,
+.post-199 .entry-header {
+    display: none;
+}
+
 .wrapper-front h1 {
     display: inline-block;
     border: 3px solid #ccc;
@@ -103,7 +108,7 @@ a:hover {
 
 /* Lunchmeny */
 
-.post-6 {
+.post-199 {
     text-align: center;
 }
 
@@ -130,7 +135,7 @@ a:hover {
     color: #f7f7f7;
 }
 
-#front-second h1::after {
+#front-second h1:after {
     background: none repeat scroll 0 0 darkslategray;
 }
 
@@ -198,19 +203,28 @@ a:hover {
 }
 
 /* Print */
-@media print { 
+@media print {
+    #wrapper-header-flash,
     #front-second, 
     #wrapper-footer-full, 
     #wrapper-footer, 
     .post-edit-link,
     .sharedaddy,
-    .addtoany_shortcode {
+    .addtoany_shortcode,
+    #front-first h1:after {
         display: none;
     }
-
-    #wrapper-front h1:after {
+    
+    #front-first,
+    #front-first .entry-week {
+        background: transparent;
         border: none;
     }
+
+    /* #wrapper-front h1:after {
+        border: none;
+        background: none;
+    } */
 
     .custom-logo-link {
         max-width: 10%;
@@ -218,7 +232,7 @@ a:hover {
 
     body.home {
         height: 100vh;
-        background-color: #373737;
+        /* background-color: #373737; */
     }
 
     #front-first:after {  
@@ -230,14 +244,13 @@ a:hover {
         content: "Adress: Rosengårdsvägen 39, Tel: 0766 77 87 45, Epost: info@rosengardenmat.se, Hemsida: rosengardenmat.se";
     }
 
-    #wrapper-header-full-first,
-    #wrapper-header-flash {
+    #wrapper-header-full-first {
         padding: 0;
+        background: none;
     }
 
     #wrapper-header-full-first .navbar-brand,
-    .entry-header h1,
-    #header-flash p,
+    #front-first h1,
     .lunchmeny h3,
     .lunchmeny h4,
     .lunchmeny p,
@@ -249,7 +262,7 @@ a:hover {
         font-size: 70px;        
     }
 
-    .entry-header h1 {
+    #front-first h1 {
         font-size: 40px;
         margin: 0;
         margin-bottom: 10px;
@@ -258,12 +271,16 @@ a:hover {
         font-weight: bold; 
     }
 
-    #front-first .entry-week,
+    #front-first h1:after {        
+        border: none;    
+    }
+
+   /*  #front-first .entry-week,
    .lunchmeny .entry-week {
         padding: 0;
         margin: 0;
         border: none;
-    }
+    } */
 
     .lunchmeny h3,
     .lunchmeny h4  {
@@ -271,9 +288,36 @@ a:hover {
         font-weight: bold;       
     }
 
-    #header-flash p,
     .lunchmeny p,
     .lunchmeny p.bonus {
         font-size: 20px;        
+    }
+
+    /* Color print */
+
+    article.post-199 {
+        background-color: #fff;
+    }
+
+    /* #page-wrapper {
+        background-color: blue;
+    } */
+
+    .page-id-199 #header-full-first-content  .navbar-brand {
+        color: white;
+        /* mix-blend-mode: difference; */
+    }
+
+    .post-199 h1 {
+        padding-top: 18px;
+    }
+
+    .post-199 img {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        z-index: -1;
     }
 }
