@@ -27,6 +27,7 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'child-rosengarden-styles', get_stylesheet_directory_uri() . '/style.css', array(), $the_theme->get( 'Version' ) );
 }
 
+/* Short codes */
 define("MYFORMAT", 'l - d F');
     
 function displayWeekday($atts = [], $content = null, $tag = ''){
@@ -45,13 +46,21 @@ function displayweek(){
     }
     add_shortcode('week', 'displayweek');
 
-function register_frontpage_menu() {
-    register_nav_menu('frontpage-menu',__( 'Frontpage Menu' ));
+/* Menus */
+function register_footer_menu() {
+    register_nav_menu('footer-menu',__( 'Footer Menu' ));
     }
-    add_action( 'init', 'register_frontpage_menu' );
+    add_action( 'init', 'register_footer_menu' );
 
 // Customize login page - https://premium.wpmudev.org/blog/customize-login-page/
 function my_custom_login() {
 	echo '<link rel="stylesheet" type="text/css" href="' . get_bloginfo('stylesheet_directory') . '/style-custom-login.css" />';
 }
 add_action('login_head', 'my_custom_login');
+
+// Logout redirect
+add_action('wp_logout','auto_redirect_external_after_logout');
+function auto_redirect_external_after_logout(){
+  wp_redirect( 'https://rosengardenmat.se' );
+  exit();
+}

@@ -25,13 +25,21 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 							
-							<?php print( esc_html__( 'Vallentuna Mat & Catering, &copy; 2018', 'understrap' ) ); ?>
+							<p><?php print( esc_html__( 'Vallentuna Mat & Catering, &copy; 2018', 'understrap' ) ); ?></p>
+
+							<?php
+							if ( is_user_logged_in() ) {
+								wp_nav_menu( array( 'theme_location'  => 'footer-menu' ) );
+							} else {
+								?><a href="wp-admin" aria-pressed="true">Logga in</a><?php
+							}
+							?>
 							
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
 
-			</div><!--col end -->
+			</div><!--col end -->		
 
 		</div><!-- row end -->
 
