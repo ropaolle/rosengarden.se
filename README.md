@@ -1,16 +1,16 @@
 # Todo
 
-* Sortering av rätter, efterrätt sist, sortera med datum
 * Lista med Cateringtyper -> sidor, visa och dölj listitems automatiskt - Kontaktformulär. Var ska det ligga på listsida eller slutsida.
 * Epost via hemsidan, ronny, camilla, andreas info-> alla...
-* Nytt typsnitt i loggan, vilket?
-
+* Nytt typsnitt i loggan, vilket? - monotype corsiva font - bara namnet i mitten
+* Egen 404-sida
+* Dölja rätter från Google (robots.txt)
 
 ## Nästa version
-
-* Döpa veckodagar på menyn, t.ex. påskafton m.m. Behövs det?
 * Lägga in bokningar av lokal.
 * Rebuild CSS with Gulp.
+
+
 
 ## Info
 
