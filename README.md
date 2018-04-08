@@ -2,8 +2,10 @@
 
 * Lista med Cateringtyper -> sidor, visa och dölj listitems automatiskt - Kontaktformulär. Var ska det ligga på listsida eller slutsida.
 * Egen 404-sida
+* Fixed maps image https://goo.gl/maps/xeDDqgtfw8F2
 
 ## Nästa version
+
 * Lägga in bokningar av lokal.
 * Rebuild CSS with Gulp.
 
@@ -36,4 +38,3 @@ sudo ./certbot-auto certonly --standalone -d ropaolle.se -d www.ropaolle.se -d w
 ```
 
 ### Fakturering
-
