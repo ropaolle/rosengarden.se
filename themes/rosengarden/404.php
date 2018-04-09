@@ -35,7 +35,8 @@ $container   = get_theme_mod( 'understrap_container_type' );
 							<p><?php esc_html_e( 'Men misströsta icke. Länkar till vår fina lunchbuffè samt attraktiva cateringerbjudanden hittar du i huvudmenyn.',
 							'rosengarden' ); ?></p>
 
-							<img src="//http://rosengardenmat.se/wp-content/uploads/sites/5/2018/04/happy-fruit.jpg" />							
+							<img src="https://rosengardenmat.se/wp-content/uploads/sites/5/2018/04/happy-fruit-2.jpg" />
+							
 
 						</div><!-- .page-content -->
 
