@@ -1,5 +1,13 @@
 <?php
 
+// function debug_to_console( $data ) {
+//     $output = $data;
+//     if ( is_array( $output ) )
+//         $output = implode( ',', $output);
+
+//     echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+// }
+
 function understrap_remove_scripts() {
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
@@ -54,8 +62,32 @@ function displayContactInfo(){
 function displayOpeningInfo(){
     return '<div class="opening-info">' . apply_filters('the_content', get_page(189)->post_content) . '</div>';
     }
-    add_shortcode('opening-info', 'displayOpeningInfo');  
-        
+    add_shortcode('opening-info', 'displayOpeningInfo');   
+    
+// https://codex.wordpress.org/Function_Reference/get_children
+function displayPortfolioList(){
+    $args = array(
+        // 'post_parent' => 0,
+        'post_type'   => 'jetpack-portfolio', 
+        'numberposts' => -1,
+        'post_status' => 'any' 
+    );
+    $children = get_children( $args );
+
+    $text = '';
+
+    if ( empty($children) ) {
+        // no attachments here
+    } else {
+        foreach ( $children as $child_id => $child ) {
+            $text = $text . ':' . $child->post_title;
+        }
+    }
+
+    return sizeof($children) . '|' . $text;
+    }
+    add_shortcode('portfolio-list', 'displayPortfolioList');      
+
 /* Menus */
 function register_footer_menu() {
     register_nav_menu('footer-menu',__( 'Footer Menu' ));
