@@ -25,7 +25,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 					<div class="site-info">
 							
-							<p><?php print( esc_html__( 'Vallentuna Mat & Catering, &copy; 2018', 'understrap' ) ); ?></p>
+							<p><?php print( esc_html__( 'Vallentuna Mat & Catering, &copy; 2017', 'understrap' ) ); ?></p>
 
 							<?php
 							if ( is_user_logged_in() ) {

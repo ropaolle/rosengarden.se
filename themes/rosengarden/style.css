@@ -18,6 +18,15 @@ a:hover {
     text-decoration: none;
 }
 
+.error-404 {
+    text-align: center;
+}
+
+/* .error-404 .page-header,
+.error-404 .page-content  {
+    text-align: center;
+} */
+
 /*
 .entry-content table {
 
