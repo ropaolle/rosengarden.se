@@ -9,15 +9,22 @@
 // }
 
 function understrap_remove_scripts() {
+    // Removes the parent themes stylesheet and scripts from inc/enqueue.php
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
 
     wp_dequeue_script( 'understrap-scripts' );
-    wp_deregister_script( 'understrap-scripts' );
-
-    // Removes the parent themes stylesheet and scripts from inc/enqueue.php
+    wp_deregister_script( 'understrap-scripts' );    
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
+
+// Needs to run after portfolio shortcodes and is therefore called in wp_footer.
+function remove_portfolio_styles() {
+    
+    wp_dequeue_style( 'jetpack-portfolio-style' );
+    wp_deregister_style( 'jetpack-portfolio-style' );
+}
+add_action( 'wp_footer', 'remove_portfolio_styles' );
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
@@ -31,6 +38,7 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+
     // Add custom styles. TODO: Build and minify theme with Gulp.
     wp_enqueue_style( 'child-rosengarden-styles', get_stylesheet_directory_uri() . '/style.css', array(), $the_theme->get( 'Version' ) );
 }
@@ -78,29 +86,7 @@ function displayOpeningInfo(){
     }
     add_shortcode('opening-info', 'displayOpeningInfo');   
     
-// https://codex.wordpress.org/Function_Reference/get_children
-function displayPortfolioList(){
-    $args = array(
-        // 'post_parent' => 0,
-        'post_type'   => 'jetpack-portfolio', 
-        'numberposts' => -1,
-        'post_status' => 'any' 
-    );
-    $children = get_children( $args );
-
-    $text = '';
-
-    if ( empty($children) ) {
-        // no attachments here
-    } else {
-        foreach ( $children as $child_id => $child ) {
-            $text = $text . ':' . $child->post_title;
-        }
-    }
-
-    return sizeof($children) . '|' . $text;
-    }
-    add_shortcode('portfolio-list', 'displayPortfolioList');      
+  
 
 /* Menus */
 function register_footer_menu() {
