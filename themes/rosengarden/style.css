@@ -280,6 +280,10 @@ a:hover {
         max-width: 100%;
     }
 
+    .portfolio-entry-content {
+        padding: 10px;
+    }
+
     .single-jetpack-portfolio img {
         float: none;
         max-width: 100%;
