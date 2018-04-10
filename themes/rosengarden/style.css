@@ -159,6 +159,10 @@ a:hover {
     flex-wrap: wrap;
 }
 
+.jetpack-portfolio-shortcode .btn-secondary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
 
 .portfolio-entry-first-item-row {
     background-color: #eee;
@@ -168,6 +172,10 @@ a:hover {
     flex-basis: 30%;
     margin: 12px;
     max-width: 50%;
+}
+
+.home .portfolio-entry-first-item-row {
+    background-color: #213c3c; /* #1f5f4a*/
 }
 
 /* .jetpack-portfolio-shortcode .portfolio-entry-first-item-row:nth-child(2) {

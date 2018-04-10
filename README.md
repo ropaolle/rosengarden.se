@@ -1,11 +1,8 @@
 # Todo
 
-* Lista med Cateringtyper -> sidor, visa och dölj listitems automatiskt - Kontaktformulär. Var ska det ligga på listsida eller slutsida.
-  https://en.support.wordpress.com/portfolios/portfolio-shortcode/
-  Öppettider: Vardagar 11-14.00, Helger 12-14.00
-
-
-
+* Add css ribbon
+* Fixa text till Catering
+  
 ## Nästa version
 
 * Lägga in bokningar av lokal.
@@ -15,6 +12,7 @@
 
 * Starter theme [Understrap](https://understrap.com/), [Underscore](http://underscores.me/), [Underscor-me](http://components.underscores.me/wp/)
 * [Shortcodes](https://github.com/billerickson/display-posts-shortcode/blob/master/README.md#parameters)
+  [Portfolio shortcodes](https://en.support.wordpress.com/portfolios/portfolio-shortcode/)
   [display-posts include_title="false" posts_per_page="20" include_content="true" wrapper="div" include_date="true" date_format="l \\d\\e\\n d F"]
 * [Wordpress conditional tags](https://codex.wordpress.org/Conditional_Tags)
 * [Jetpack Email](https://jetpack.com/support/contact-form/)
