@@ -1,13 +1,5 @@
 <?php
 
-// function debug_to_console( $data ) {
-//     $output = $data;
-//     if ( is_array( $output ) )
-//         $output = implode( ',', $output);
-
-//     echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
-// }
-
 function understrap_remove_scripts() {
     // Removes the parent themes stylesheet and scripts from inc/enqueue.php
     wp_dequeue_style( 'understrap-styles' );
@@ -57,6 +49,15 @@ function my_slug_show_all_parents( $args ) {
 add_filter( 'page_attributes_dropdown_pages_args', 'my_slug_show_all_parents' );
 add_filter( 'quick_edit_dropdown_pages_args', 'my_slug_show_all_parents' );
 
+/* Rewrite portfolio slug */
+function change_slug_portfolio_to_work( $args, $post_type ) {
+    if ( $post_type == 'jetpack-portfolio') {
+        $args['rewrite']['slug'] = 'catering';
+    }
+    return $args;
+}
+add_filter( 'register_post_type_args', 'change_slug_portfolio_to_work', 10, 2 );
+
 /* Short codes */
 define("MYFORMAT", 'l - d F');
     
@@ -86,8 +87,6 @@ function displayOpeningInfo(){
     }
     add_shortcode('opening-info', 'displayOpeningInfo');   
     
-  
-
 /* Menus */
 function register_footer_menu() {
     register_nav_menu('footer-menu',__( 'Footer Menu' ));

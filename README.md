@@ -4,7 +4,7 @@
   https://en.support.wordpress.com/portfolios/portfolio-shortcode/
   Öppettider: Vardagar 11-14.00, Helger 12-14.00
 
-https://codepen.io/eode9/pen/twkKm
+
 
 ## Nästa version
 
