@@ -1,10 +1,6 @@
-# Todo
+## Todo
 
-* Add css ribbon
 * Fixa text till Catering
-  
-## Nästa version
-
 * Lägga in bokningar av lokal.
 * Rebuild CSS with Gulp.
 

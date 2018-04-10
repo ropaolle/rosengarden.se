@@ -90,6 +90,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!-- ******************* Header flash ******************* -->
 <?php if ( is_front_page() ) : ?>
 
+	<div class="corner-ribbon" id="header-corner-flash">
+
+		<?php echo apply_filters('the_content', get_page(471)->post_content); ?>		
+
+	</div>
+
+	</div><!-- #corner-flash -->
+
 	<div class="wrapper" id="wrapper-header-flash">
 
 		<div class="<?php echo esc_attr( $container ); ?>" id="header-flash" tabindex="-1">
