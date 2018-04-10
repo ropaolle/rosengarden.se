@@ -1,15 +1,22 @@
 <?php
 
 function understrap_remove_scripts() {
+    // Removes the parent themes stylesheet and scripts from inc/enqueue.php
     wp_dequeue_style( 'understrap-styles' );
     wp_deregister_style( 'understrap-styles' );
 
     wp_dequeue_script( 'understrap-scripts' );
-    wp_deregister_script( 'understrap-scripts' );
-
-    // Removes the parent themes stylesheet and scripts from inc/enqueue.php
+    wp_deregister_script( 'understrap-scripts' );    
 }
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
+
+// Needs to run after portfolio shortcodes and is therefore called in wp_footer.
+function remove_portfolio_styles() {
+    
+    wp_dequeue_style( 'jetpack-portfolio-style' );
+    wp_deregister_style( 'jetpack-portfolio-style' );
+}
+add_action( 'wp_footer', 'remove_portfolio_styles' );
 
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
@@ -23,9 +30,33 @@ function theme_enqueue_styles() {
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
+
     // Add custom styles. TODO: Build and minify theme with Gulp.
     wp_enqueue_style( 'child-rosengarden-styles', get_stylesheet_directory_uri() . '/style.css', array(), $the_theme->get( 'Version' ) );
 }
+
+/**
+ * Show all parents, regardless of post status.
+ *
+ * @param   array  $args  Original get_pages() $args.
+ *
+ * @return  array  $args  Args set to also include posts with pending, draft, and private status.
+ */
+function my_slug_show_all_parents( $args ) {
+	$args['post_status'] = array( 'publish', /*'pending', 'draft',*/ 'private' );
+	return $args;
+}
+add_filter( 'page_attributes_dropdown_pages_args', 'my_slug_show_all_parents' );
+add_filter( 'quick_edit_dropdown_pages_args', 'my_slug_show_all_parents' );
+
+/* Rewrite portfolio slug */
+function change_slug_portfolio_to_work( $args, $post_type ) {
+    if ( $post_type == 'jetpack-portfolio') {
+        $args['rewrite']['slug'] = 'catering';
+    }
+    return $args;
+}
+add_filter( 'register_post_type_args', 'change_slug_portfolio_to_work', 10, 2 );
 
 /* Short codes */
 define("MYFORMAT", 'l - d F');
@@ -54,8 +85,8 @@ function displayContactInfo(){
 function displayOpeningInfo(){
     return '<div class="opening-info">' . apply_filters('the_content', get_page(189)->post_content) . '</div>';
     }
-    add_shortcode('opening-info', 'displayOpeningInfo');  
-        
+    add_shortcode('opening-info', 'displayOpeningInfo');   
+    
 /* Menus */
 function register_footer_menu() {
     register_nav_menu('footer-menu',__( 'Footer Menu' ));

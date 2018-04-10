@@ -8,6 +8,8 @@ Text Domain: rosengarden
 Version: 0.0.5
 */
 
+/* Generic */
+
 a {
     color: #1e88e5;
     text-decoration: none;
@@ -21,29 +23,6 @@ a:hover {
 .error-404 {
     text-align: center;
 }
-
-/* .error-404 .page-header,
-.error-404 .page-content  {
-    text-align: center;
-} */
-
-/*
-.entry-content table {
-
-}
-
-.entry-content tr {
-    
-}
-
-.entry-content th {
-    
-}
-
-.entry-content td {
-    
-}
-*/
 
 /* Header */
 
@@ -95,6 +74,7 @@ a:hover {
 }
 
 #front-first .entry-header,
+#front-second .entry-header,
 .post-199 .entry-header {
     display: none;
 }
@@ -174,6 +154,43 @@ a:hover {
     margin-bottom: 12px;
 }
 
+.jetpack-portfolio-shortcode {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.jetpack-portfolio-shortcode .btn-secondary {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.portfolio-entry-first-item-row {
+    background-color: #eee;
+    margin: 12px;
+    padding: 12px;
+    flex-grow: 1;
+    flex-basis: 30%;
+    margin: 12px;
+    max-width: 50%;
+}
+
+.home .portfolio-entry-first-item-row {
+    background-color: #213c3c; /* #1f5f4a*/
+}
+
+/* .jetpack-portfolio-shortcode .portfolio-entry-first-item-row:nth-child(2) {
+    margin: 0 12px;
+} */
+
+.portfolio-entry-first-item-row .portfolio-entry-title {
+    margin-top: 0.5em;
+}
+
+.single-jetpack-portfolio img {
+    float: right;
+    max-width: 50%;
+}
+
 /* Footer */
 
 #wrapper-footer {
@@ -227,6 +244,21 @@ a:hover {
         margin: 0;
     }
 
+    .jetpack-portfolio-shortcode {
+        display: block;
+    }
+    
+    .portfolio-entry-first-item-row {
+        background-color: transparent;
+        margin: 2em 0;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .single-jetpack-portfolio img {
+        float: none;
+        max-width: 100%;
+    }
 }
 
 /* Print */
