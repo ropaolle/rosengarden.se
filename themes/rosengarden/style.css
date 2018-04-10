@@ -8,6 +8,8 @@ Text Domain: rosengarden
 Version: 0.0.5
 */
 
+/* Generic */
+
 a {
     color: #1e88e5;
     text-decoration: none;
@@ -21,29 +23,6 @@ a:hover {
 .error-404 {
     text-align: center;
 }
-
-/* .error-404 .page-header,
-.error-404 .page-content  {
-    text-align: center;
-} */
-
-/*
-.entry-content table {
-
-}
-
-.entry-content tr {
-    
-}
-
-.entry-content th {
-    
-}
-
-.entry-content td {
-    
-}
-*/
 
 /* Header */
 
@@ -95,6 +74,7 @@ a:hover {
 }
 
 #front-first .entry-header,
+#front-second .entry-header,
 .post-199 .entry-header {
     display: none;
 }
