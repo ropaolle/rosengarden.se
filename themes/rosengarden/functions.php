@@ -35,6 +35,20 @@ function theme_enqueue_styles() {
     wp_enqueue_style( 'child-rosengarden-styles', get_stylesheet_directory_uri() . '/style.css', array(), $the_theme->get( 'Version' ) );
 }
 
+/**
+ * Show all parents, regardless of post status.
+ *
+ * @param   array  $args  Original get_pages() $args.
+ *
+ * @return  array  $args  Args set to also include posts with pending, draft, and private status.
+ */
+function my_slug_show_all_parents( $args ) {
+	$args['post_status'] = array( 'publish', /*'pending', 'draft',*/ 'private' );
+	return $args;
+}
+add_filter( 'page_attributes_dropdown_pages_args', 'my_slug_show_all_parents' );
+add_filter( 'quick_edit_dropdown_pages_args', 'my_slug_show_all_parents' );
+
 /* Short codes */
 define("MYFORMAT", 'l - d F');
     
