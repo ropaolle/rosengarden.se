@@ -94,6 +94,10 @@ a:hover {
 
 /* Front page */
 
+.home .bg-dark {
+    background-color: #222!important;
+}
+
 .wrapper-front .col-md-12 {
     text-align: center;
 }

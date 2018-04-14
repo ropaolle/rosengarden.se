@@ -8,6 +8,9 @@
  */
 
 $container = get_theme_mod( 'understrap_container_type' );
+$header_flash = get_page(8);
+$corner_flash = get_page(471);
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -90,25 +93,29 @@ $container = get_theme_mod( 'understrap_container_type' );
 <!-- ******************* Header flash ******************* -->
 <?php if ( is_front_page() ) : ?>
 
-	<div class="corner-ribbon" id="header-corner-flash">
+	<?php if ( $corner_flash->post_status == 'publish' ) : ?>
 
-		<?php echo apply_filters('the_content', get_page(471)->post_content); ?>		
+		<div class="corner-ribbon" id="header-corner-flash">
 
-	</div>
+			<?php echo apply_filters('the_content', $corner_flash->post_content); ?>		
 
-	</div><!-- #corner-flash -->
+		</div><!-- #corner-flash -->
 
-	<div class="wrapper" id="wrapper-header-flash">
+	<?php endif; ?> 	
 
-		<div class="<?php echo esc_attr( $container ); ?>" id="header-flash" tabindex="-1">
+	<?php if ( $header_flash->post_status == 'publish' ) : ?>
 
-			<?php edit_post_link('edit', '', '', 8); ?>
+		<div class="wrapper" id="wrapper-header-flash">
 
-			<?php echo apply_filters('the_content', get_page(8)->post_content); ?>		
+			<div class="<?php echo esc_attr( $container ); ?>" id="header-flash" tabindex="-1">
 
-		</div>
+				<?php echo apply_filters('the_content', $header_flash->post_content); ?>	
 
-	</div><!-- #wrapper-header-flash -->
+			</div>
+
+		</div> <!-- #wrapper-header-flash -->
+	
+	<?php endif; ?> 
 
 <?php endif; ?>
 
