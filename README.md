@@ -28,10 +28,16 @@ sudo chmod 775 rosengarden
 sudo chmod 664 rosengarden/*
 
 # Certs
+## Create new
 sudo /opt/bitnami/ctlscript.sh stop
 cd /opt/bitnami/letsencrypt
 # Restricted to 5 times per week
 sudo ./certbot-auto certonly --standalone -d ropaolle.se -d www.ropaolle.se -d wp.ropaolle.se -d rosengardenmat.se
+
+## Renew
+sudo /opt/bitnami/ctlscript.sh stop
+/opt/bitnami/letsencrypt/certbot-auto renew
+sudo /opt/bitnami/ctlscript.sh start
 ```
 
 ### Fakturering
